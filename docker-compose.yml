@@ -2,7 +2,10 @@ version: "3.9"
 services:
   app:
     image: devkitpro/devkitarm
-    entrypoint: /bin/bash -c 'cd /app && make clean && make build'
+    entrypoint: /bin/bash -c 'cd /app && make build'
     volumes: 
       - ./:/app
+  emu:
+    image: mgba/windows:w32-20201126
 
+    

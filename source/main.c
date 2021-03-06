@@ -12,7 +12,7 @@
 void plot(int x, int y, int color);
 void plotVerticalLine(int x, int color);
 void plotDiagnalLine(int topX, int topY, int bottomX, int bottomY, int count);
-void plotCube(int x, int y);
+void plotSquare(int x, int y);
 int main()
 {
     REG_DISPCNT= DCNT_MODE3 | DCNT_BG2;
@@ -21,8 +21,9 @@ int main()
     int count = 0;
     plotVerticalLine(SCREEN_WIDTH/2, CLR_BLUE);
     plotDiagnalLine(0,0,SCREEN_WIDTH,SCREEN_HEIGHT, 8);
-    plotCube(SCREEN_WIDTH/2, SCREEN_HEIGHT/2);
-    plotCube(100, 100);
+    plotSquare(SCREEN_WIDTH/2, SCREEN_HEIGHT/2);
+    // plotSquare(100, 100);
+    // printf("%d", SCREEN_HEIGHT)
 
     plot(SCREEN_WIDTH/2, SCREEN_HEIGHT/2, CLR_BLUE);
 
@@ -60,7 +61,7 @@ void plotDiagnalLine(topX, topY, bottomX, bottomY, count){
 
 }
 
-void plotCube(int x, int y){
+void plotSquare(int x, int y){
     int offset = 10;
     int leftBound = x-offset;
     int rightBound =  x+offset;
